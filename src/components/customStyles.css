@@ -1,0 +1,5 @@
+.custom-modal .ant-modal-content {
+    background-color: #d2d6b9; /* Light gray background */
+    scroll-behavior: smooth;
+    border-radius: 8px; /* Optional rounded corners */
+  }
