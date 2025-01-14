@@ -66,7 +66,7 @@ const SignUp = () => {
     <div className='flex justify-center items-center'>
 <div className="flex border mt-8 bg-gray-100 w-fit rounded-xl h-4/6  flex-col justify-center px-6 py-2 lg:px-8">
   <div className="sm:mx-auto sm:w-full sm:max-w-sm h-22">
-    <img className="mx-auto h-16 w-auto" src="src/images/82-821996_transparent-social-media-icons-png-png-download.png" alt="Your Company" />
+    <img className="mx-auto h-16 w-auto" src="https://res.cloudinary.com/dqo56owj9/image/upload/v1735624119/xdrw7mmzpodjxoly2vaq.png" alt="Your Company" />
     <h2 className=" text-center text-2xl/9 font-bold tracking-tight text-red-600">Sign up to your account</h2>
   </div>
   <div className="mt-3 sm:mx-auto sm:w-full sm:max-w-sm">
