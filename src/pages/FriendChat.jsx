@@ -10,7 +10,7 @@ import moment from 'moment';
 
 const FriendChat = () => {
 
-    let endPoint = 'http://localhost:4000'
+    let endPoint = 'https://socialmediabackend-abt5.onrender.com'
 
     const [conversation, setConversation] = useState([]);
 
