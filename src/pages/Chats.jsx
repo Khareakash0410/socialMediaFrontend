@@ -17,9 +17,9 @@ const Chats = () => {
     let userId  = ctx?.user?.userId
 
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
-    let endPoint = 'http://localhost:4000'
+    let endPoint = 'https://socialmediabackend-abt5.onrender.com'
     let socketRef = useRef();
     const [messageBySocket, setMessageBySocket] = useState("");
 
