@@ -39,6 +39,8 @@ const Chats = () => {
     const followingsArr =  ctx?.user?.loggedUserDetails?.followings || []
     const chatsArr = _.unionBy(followersArr, followingsArr, "_id");
 
+     const [open ,setOpen] = useState(false);
+
     // const chatsArr = [...followersArr, ...followingsArr].reduce((acc,obj) => {
     //     const index = acc.findIndex((item) => item._id === obj._id);
     //     if (index === -1) {
@@ -151,7 +153,7 @@ const Chats = () => {
 
         {/* Left */}
     
-      <div className="w-[30%] md:w-[20%] border-y-2 border-black ml-2  rounded-lg h-[88%] flex flex-col  items-center  border-x-[1px] overflow-y-auto scrollbar-hide">
+      <div className="sm:w-[30%] md:w-[20%] border-y-2 border-black ml-2  rounded-lg h-[88%] hidden sm:flex flex-col  items-center  border-x-[1px] overflow-y-auto scrollbar-hide">
         {chatsArr.length > 0 ? (
           chatsArr.map((user, index) => (
             <div key={index} className="px-3 bg-red-300 py-2 h-32 border-b-2 flex flex-col items-center w-full border-gray-300">
@@ -182,6 +184,66 @@ const Chats = () => {
         }
       </div>
 
+      <button onClick={() => setOpen(!open)} data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" className="flex items-start p-2 mt-[-12px] text-sm text-gray-500 rounded-lg sm:hidden focus:outline-none">
+  <span className="sr-only">Open sidebar</span>
+  <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <path clipRule="evenodd" fillRule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z" />
+  </svg>
+</button>
+
+
+<aside id="logo-sidebar" className={`fixed top-16 left-0 z-40 w-36 h-fit  transition-transform ${
+          open ? "translate-x-0" : "-translate-x-full"
+        } sm:-translate-x-full`} aria-label="Sidebar">
+
+
+  <div className="h-full px-3 py-4 relative rounded-md overflow-y-auto bg-cyan-100">
+   <span onClick={() => setOpen(!open)} className='absolute top-1 font-semibold right-2'>
+      X
+   </span>
+
+
+    <ul className="mt-3 space-y-2 font-medium">
+
+
+
+    {chatsArr.length > 0 ? (
+          chatsArr.map((user, index) => (
+
+            <li className='flex justify-start gap-1' onClick={() => {handleSelectedFriend(user); setOpen(!open)} }>
+            <img
+            src={user?.profilePic || 'https://via.placeholder.com/50'}
+            alt={`${user?.name}'s profile`}
+            className="w-8 h-8 cursor-pointer   rounded-full border-2 border-red-400"
+          />
+          <p className="font-serif  text-sm sm:text-lg cursor-pointer">{user?.name || 'Unknown User'}</p>
+          
+
+      </li>
+
+
+            
+          ))
+        ) : (
+            <div className='h-full flex  flex-col gap-6 items-center justify-center'>           
+              <p className='font-serif shadow-md rounded-md text-gray-600 bg-red-100 '>
+                No followers or followings to Chat
+              </p>
+              <TbFriendsOff size={70} fill='green' />
+              <p className='font-serif shadow-md rounded-md text-gray-600 bg-green-50 '>
+               Please Follow or Wait for Follow
+              </p>
+            </div>
+        )
+        }
+
+      
+     
+    </ul>
+
+
+  </div>
+</aside>
 
 
       {/* Middle */}
@@ -191,21 +253,21 @@ const Chats = () => {
         <div style={{
             backgroundImage: `url(${friend?.coverPic})`,
             opacity: 0.8
-          }} className='flex bg-cover flex-col h-full relative w-[60%] md:w-[75%] lg:w-[55%] border rounded-lg py-13'>
+          }} className='flex bg-cover flex-col h-full relative w-[80%] sm:w-[60%] md:w-[75%] lg:w-[55%] border rounded-lg py-13'>
     
-          <header className='flex h-[35px] justify-between items-center p-4 bg-blue-100 fixed w-[60%] md:w-[75%] lg:w-[53.5%] lg:top-[55px]  right-17 z-10'>
+          <header className='flex h-[35px] justify-between items-center p-4 bg-blue-100 fixed w-[80%] sm:w-[60%] md:w-[75%] lg:w-[55%] top-[60px]  right-17 z-10'>
           <div className='flex gap-1 items-center'>
             <img src={friend?.profilePic} alt='Avatar' className='w-7 h-7 object-cover rounded-full' />
             <span className='ml-2 font-serif capitalize'>{friend?.name}</span>
           </div>
-          <div className='flex gap-5 items-center'>
+          <div className='flex gap-2 sm:gap-5 items-center'>
             <MdCall size={20} className='text-lg mr-2 cursor-pointer' />
             <MdVideoCall size={24} className='text-lg mr-2 cursor-pointer' />
             <FaRegSmile size={20} className='text-lg cursor-pointer' />
           </div>
           </header>
     
-          <div ref={messageContainerRef} className='flex-1  overflow-y-auto scrollbar-hide px-4 mt-[40px] lg:mt-[90px] pb-7'>
+          <div ref={messageContainerRef} className='flex-1  overflow-y-auto scrollbar-hide px-4 mt-[50px] lg:mt-[40px] pb-7'>
           {conversation.map((ele, index) => {
            return  <div key={index} className={`flex ${ele?.userId?._id === ctx.user.userId ? 'justify-end' : ''} `}> 
               <div className={`inline-block p-2 rounded-lg ${ele?.userId?._id === ctx.user.userId ? 'bg-blue-200' : 'bg-green-200'} mb-4 max-w-[45%] break-words`}> 
@@ -226,7 +288,7 @@ const Chats = () => {
           </div>
     
     
-          <div className='pr-4 pl-1 py-2 h-[40px] rounded-lg flex items-center  fixed w-fit sm:w-[60%] md:w-[75%] lg:w-[55%] right-17 bottom-0 z-10'>
+          <div className='pr-4 pl-1 py-2 h-[40px] rounded-lg flex items-center  fixed w-[80%] sm:w-[60%] md:w-[75%] lg:w-[55%] right-17 bottom-0 z-10'>
           <input value={message} onChange={handleMessageChanger} name='message' type='text'  placeholder='Type your message here...' className='flex-1  p-2 border-[1px] border-gray-300 rounded-lg text-center focus:outline-none' />
           <button onClick={() => handleSendMessage(friend)} className='ml-2 p-2 bg-blue-500 text-white rounded-lg flex items-center justify-center'> 
             <MdSend /> 
@@ -235,12 +297,12 @@ const Chats = () => {
     
           </div>
             ) : (
-                <div className="flex w-[75%] lg:w-[55%] flex-col items-center justify-center h-[85%] text-gray-600 bg-gray-200 rounded-lg p-8  mb-4 shadow-lg">
+                <div className="flex w-[80%] sm:w-[60%] md:w-[75%] lg:w-[55%] flex-col items-center justify-center h-[85%] text-gray-600 bg-gray-200 rounded-lg p-8  mb-4 shadow-lg">
                 {/* Icon or Illustration */}
                 <FaUserFriends size={100} className="text-gray-400 mb-4" />
           
                 {/* Message */}
-                <h2 className="text-2xl font-semibold mb-2">No Friend Selected</h2>
+                <h2 className="text-2xl text-center font-semibold mb-2">No Friend Selected</h2>
                 <p className="text-center text-gray-500 mb-4">
                   Choose a friend from the list to start a conversation.
                 </p>

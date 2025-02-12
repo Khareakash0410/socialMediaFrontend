@@ -68,7 +68,7 @@ const Navbar = () => {
            {
       ctx.user.login === true ?
        ( <>
-            <button onClick={() => setOpen(!open)} data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg md:hidden focus:outline-none">
+            <button onClick={() => setOpen(!open)} data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" className="inline-flex items-center p-2 mt-2  text-sm text-gray-500 rounded-lg md:hidden focus:outline-none">
   <span className="sr-only">Open sidebar</span>
   <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
     <path clipRule="evenodd" fillRule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z" />
@@ -121,7 +121,7 @@ const Navbar = () => {
           <svg className="shrink-0 w-5 h-5 text-gray-500 transition duration-75 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
             <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z" />
           </svg>
-          <span className="flex-1 ms-3 whitespace-nowrap">Ntoification</span>
+          <span className="flex-1 ms-3 whitespace-nowrap">Notification</span>
           <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full ">!</span>
         </Link>
       </li>
@@ -182,7 +182,7 @@ const Navbar = () => {
                <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base gap-4 justify-center">
 
               <div className='relative'>
-                  <input value={inputValue} onChange={handleNameChange} name='name' type="text" className='border bg-red-100 lg:mr-5 text-center rounded-md mx-auto w-[325px] sm:w-[500px] md:w-96 px-16 focus:outline-none py-[6px]' placeholder='Search for a friend or user......' />
+                  <input value={inputValue} onChange={handleNameChange} name='name' type="text" className='border bg-red-100 lg:mr-5 text-center rounded-md mx-auto w-[300px] sm:w-[500px] md:w-96 px-4 md:px-16 focus:outline-none py-[6px]' placeholder='Search for a friend or user......' />
 
                   <div className='absolute bg-gray-700 rounded-md mt-5 w-[325px] sm:w-[500px] md:w-96 max-h-40 overflow-y-auto scrollbar-hide  z-10 shadow-lg'> 
                     {
