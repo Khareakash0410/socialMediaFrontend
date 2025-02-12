@@ -12,7 +12,7 @@ const UserPosts = () => {
 
 
     let ctx = useContext(UserContext);
-    console.log(ctx);
+
 
     let token = ctx.user.token;
 
@@ -25,7 +25,6 @@ const UserPosts = () => {
     });
 
     let data = await res.data.posts;
-    console.log(data);
 
     const updatedData = data.map((post) => ({
       ...post,
@@ -40,8 +39,11 @@ const UserPosts = () => {
       getYourAllPosts();
    }, []);
 
+
+
+
   return (
-    <div className='w-full mt-4 mb-2 grid gap-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3'>
+    <div className='w-full  md:mt-[60px] mt-[65px] mb-2 grid gap-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3'>
       {
         yourAllPosts.map((ele, index) => {
             return <Link to={`/post?name=${ctx.user.loggedUserDetails.name}`} state={ele._id} key={index} className="w-[80%] h-[350px] mt-5 mx-auto bg-gradient-to-r from-slate-300 via-red-50 to-yellow-50 shadow-xl rounded-lg overflow-hidden border border-blue-300 hover:shadow-4xl transition-shadow duration-300">
@@ -73,7 +75,7 @@ const UserPosts = () => {
                      <p className='text-red-600 font-medium'>No File found😒</p>
                     </div>
                    )
-       }
+            }
 
 
 

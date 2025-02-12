@@ -53,7 +53,7 @@ const ForgetPassword = () => {
 
 
   return (
-   <div className='flex justify-center items-center'>
+   <div className='flex justify-center items-center px-6 md:px-0 mt-16 md:mt-0'>
     <div className="flex mt-16 w-fit h-4/6 border rounded-xl flex-col bg-gray-100 justify-center px-6 py-2 lg:px-8">
   <div className="sm:mx-auto sm:w-full sm:max-w-sm h-22">
     <img className="mx-auto h-16 w-auto" src="src/images/82-821996_transparent-social-media-icons-png-png-download.png" alt="Your Company" />
@@ -73,8 +73,8 @@ const ForgetPassword = () => {
       </div>
     </form>
     <p className="mt-3 text-center text-sm/6 text-gray-500">
-      Not a member?
-      <Link to="/signup" className="font-semibold text-indigo-600 hover:text-indigo-500">Proceed to Register here</Link>
+      Remember Your password?
+      <Link to="/signin" className="font-semibold text-indigo-600 hover:text-indigo-500">Proceed to Login here</Link>
     </p>
   </div>
 </div>

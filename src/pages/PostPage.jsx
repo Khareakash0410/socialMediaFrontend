@@ -103,39 +103,39 @@ const PostPage = () => {
 
 
 return (
-<div className="max-w-3xl flex  mx-auto  px-3 mt-[90px] bg-gray-700 shadow-lg rounded-lg">
+<div className="max-w-3xl flex flex-col md:flex-row w-[90%]  items-center  mx-auto  md:mt-28  px-3 mt-[120px] bg-gray-700 shadow-lg rounded-lg">
  
 
 
                 {/* Left */}
-  <div className="w-[50%] mt-2">
+  <div className="md:w-[50%] w-full mt-2">
       {
         post?.file ? (
           post?.file?.includes("image") ? (
-            <div onClick={() => MediaModal(post?.file)} className='mx-auto w-72'>
-                  <img src={post?.file} className='w-72 h-72 cursor-cell rounded-lg border-[1px] border-red-500 ' alt="" />
+            <div onClick={() => MediaModal(post?.file)} className='mx-auto sm:w-72 w-56'>
+                  <img src={post?.file} className='sm:w-72 sm:h-72 w-56 h-56 cursor-cell rounded-lg border-[1px] border-red-500 ' alt="" />
             </div>
            
           ) : (
             post?.file?.includes("video") ? (
-              <div onClick={() => MediaModal(post?.file)} className='w-72 h-72 mx-auto border-[1px] border-red-500'>
-                       <video className='object-cover cursor-cell h-72 w-72 rounded-lg' controls  src={post?.file}></video>
+              <div onClick={() => MediaModal(post?.file)} className='mx-auto sm:w-72 w-56 border-[1px] border-red-500'>
+                       <video className='object-cover cursor-cell sm:w-72 sm:h-72 w-56 h-56 rounded-lg' controls  src={post?.file}></video>
               </div>
            
             ) : (
               post?.file?.includes("audio") ? (
-                 <div  className='w-72 cursor-not-allowed h-72 mx-auto flex items-end  rounded-lg bg-[url("https://media.tenor.com/b3pZMIW1I-UAAAAM/audio-beat.gif")]'>
-                  <audio className='h-10  w-72 ' controls src={post?.file}></audio>
+                 <div  className='sm:w-72 cursor-not-allowed sm:h-72 w-56 h-56 mx-auto flex items-end  rounded-lg bg-[url("https://media.tenor.com/b3pZMIW1I-UAAAAM/audio-beat.gif")]'>
+                  <audio className='sm:h-10 h-8  sm:w-72 w-56' controls src={post?.file}></audio>
                  </div>
               ) : (
-                <div className='w-72 cursor-not-allowed h-72 flex items-end justify-center mx-auto  rounded-lg bg-[url("https://png.pngtree.com/element_our/20200610/ourmid/pngtree-not-found-image_2238448.jpg")]'>
+                <div className='sm:w-72 cursor-not-allowed sm:h-72 w-56 h-56 flex items-end justify-center mx-auto  rounded-lg bg-[url("https://png.pngtree.com/element_our/20200610/ourmid/pngtree-not-found-image_2238448.jpg")]'>
                     <p className='text-red-600 font-medium text-center'>Unsupported file type 🫤</p>
                 </div>
               )
             )
           )
         ) : (
-          <div className='w-72 h-72 cursor-not-allowed mx-auto flex items-end justify-center rounded-lg bg-[url("https://png.pngtree.com/element_our/20200610/ourmid/pngtree-not-found-image_2238448.jpg")]'>
+          <div className='sm:w-72 sm:h-72 w-56 *:h-56 cursor-not-allowed mx-auto flex items-end justify-center rounded-lg bg-[url("https://png.pngtree.com/element_our/20200610/ourmid/pngtree-not-found-image_2238448.jpg")]'>
               <p className='text-red-600 font-medium'>No File found😒</p>
           </div>
         )
@@ -156,7 +156,7 @@ return (
 
 
                 {/* Right */}
-  <div className='flex items-center gap-6 flex-col w-[50%] mt-8 mb-2'>
+  <div className='flex items-center gap-6 flex-col w-full md:w-[50%] mt-8 mb-2'>
 
      <Link to={`/friendProfile/?name=${post?.userId?.name}`} state={post?.userId?._id} className='flex cursor-pointer flex-col gap-2 items-center'>
         <img src={post?.userId?.profilePic} className='w-16 h-16 rounded-full border-[1px] border-red-500 ' alt="" />

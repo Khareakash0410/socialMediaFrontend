@@ -75,8 +75,6 @@ const ProfilePage = () => {
 
     const [userDetails, setUserDetails] = useState("");
 
-    console.log(userDetails)
-
 
 
 
@@ -91,7 +89,7 @@ const ProfilePage = () => {
        });
 
        let data = await res.data;
-       console.log(data);
+ 
        setUserDetails(data.data);
     }
 
@@ -113,7 +111,6 @@ try {
 
   let data = await res.data.secure_url;
 
-  console.log(data);
 
   if (data) {
     setImage(false);
@@ -629,7 +626,7 @@ toast.error("Failed to update cover Pic", {position: "top-center", theme: "color
 
   return (
               // Profile Page body ----------------
-      <div className="min-h-screen flex mt-[-80px] flex-col items-center px-4 pt-24">
+      <div className="min-h-screen flex mt-[-50px] md:mt-[-60px] flex-col items-center px-4 pt-24">
 
 
 
@@ -875,15 +872,23 @@ toast.error("Failed to update cover Pic", {position: "top-center", theme: "color
 
           
                      {/* email & Contact */}
-          <div className='flex justify-center items-center'>
+          <div className='flex flex-col sm:flex-row justify-center items-center'>
+
+            <div className='flex justify-center items-center'>
             <h4 className='font-serif cursor-not-allowed text-sm text-gray-600'>
               {userDetails?.email}
             </h4>
             <IoMdMail color='red' size={10} className='mr-2 cursor-not-allowed'/>
+            </div>
+            
              | 
+
+            <div className='flex justify-center items-center'>
             <h4 className='font-serif ml-2 cursor-grab  text-sm text-gray-600'>+91-{userDetails?.contact}
             </h4>  
             <IoCall color='green' size={12} className=' cursor-grab' />
+            </div>
+           
           </div>
 
 
@@ -951,7 +956,7 @@ toast.error("Failed to update cover Pic", {position: "top-center", theme: "color
 
 
                        {/* Bio */}
-          <div className='flex gap-1 justify-center items-center'>
+          <div className='flex flex-col md:flex-row gap-1 justify-center items-center'>
                <p className="text-gray font-serif font-600 mt-2">
                      {
                       userDetails?.bio

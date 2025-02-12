@@ -231,7 +231,7 @@ const FriendProfilePage = () => {
 
 return (
                     // Profile Page body ----------------
-    <div className="min-h-screen flex flex-col mt-[-80px] items-center px-4 pt-24 pb-6">
+    <div className="min-h-screen flex flex-col md:mt-[-55px] mt-[-50px]  items-center px-4 pt-24 pb-6">
 
 
 

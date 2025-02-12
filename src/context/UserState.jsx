@@ -82,7 +82,7 @@ useEffect(() => {
   },[user.login])
 
 
-   console.log(user)
+
 
 
   return (

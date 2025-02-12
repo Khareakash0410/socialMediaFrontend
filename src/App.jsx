@@ -30,7 +30,7 @@ let login = ctx.user.login;
       <BrowserRouter>
 
 
-       <div className='mb-[70px]'>
+       <div className='mb-[40px]'>
           <Navbar />
        </div>
       

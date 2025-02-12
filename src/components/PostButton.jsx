@@ -144,10 +144,10 @@ const PostButton = (props) => {
 
 return (<>
 
-    <div className='w-full h-16 flex justify-evenly items-center'>
-      <button onClick={handleClick} className='font-bold text-gray-600 hover:bg-gray-200 hover:text-gray-900  p-1 rounded-lg text-lg'>Share a Feeling 😎</button>
-      <button onClick={handleClick} className='font-bold text-gray-600 hover:bg-gray-200 hover:text-gray-900  p-1 rounded-lg text-lg'>Create a Post 📤</button>
-      <button onClick={handleClick} className='font-bold text-gray-600 hover:bg-gray-200 hover:text-gray-900  p-1 rounded-lg text-lg'>Photo/Video 🎥</button>
+    <div className='w-full mt-6  md:mt-0 gap-3 md:gap-1 h-16 flex justify-evenly items-center'>
+      <button onClick={handleClick} className='font-bold text-gray-600 hover:bg-gray-200 hover:text-gray-900 text-sm p-1 rounded-lg md:text-lg'>Share a Feeling 😎</button>
+      <button onClick={handleClick} className='font-bold text-gray-600 hover:bg-gray-200 hover:text-gray-900 text-sm p-1 rounded-lg md:text-lg'>Create a Post 📤</button>
+      <button onClick={handleClick} className='font-bold text-gray-600 hover:bg-gray-200 hover:text-gray-900 text-sm p-1 rounded-lg md:text-lg'>Photo/Video 🎥</button>
     </div>
 
 

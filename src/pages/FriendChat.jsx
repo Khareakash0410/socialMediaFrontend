@@ -117,7 +117,7 @@ return (
         opacity: 0.8
       }} className='flex bg-cover flex-col h-screen relative w-full mx-auto border rounded-lg py-13 mt-[-80px]'>
 
-      <header className='flex h-[35px] justify-between items-center p-4 bg-blue-100 fixed top-[55px] left-0 right-0 z-10'>
+      <header className='flex h-[35px] justify-between items-center p-4 bg-blue-100 fixed lg:top-[55px] top-[60px] md:top-[50px]   left-0 right-0 z-10'>
       <div className='flex gap-1 items-center'>
         <img src={friend?.profilePic} alt='Avatar' className='w-7 h-7 object-cover rounded-full' />
         <span className='ml-2 font-serif capitalize'>{friend?.name}</span>
@@ -129,7 +129,7 @@ return (
       </div>
       </header>
 
-      <div ref={messageContainerRef} className='flex-1 pb-4 overflow-y-auto scrollbar-hide px-4 mt-[100px]'>
+      <div ref={messageContainerRef} className='flex-1 pb-4 overflow-y-auto scrollbar-hide px-4  mt-[140px]'>
       {conversation.map((ele, index) => {
        return  <div key={index} className={`flex ${ele?.userId?._id === ctx.user.userId ? 'justify-end' : ''} `}> 
           <div className={`inline-block p-2 rounded-lg ${ele?.userId?._id === ctx.user.userId ? 'bg-blue-200' : 'bg-green-200'} mb-4 max-w-[45%] break-words`}> 

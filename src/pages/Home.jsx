@@ -21,7 +21,7 @@ const Home = () => {
   const [commentInput, setCommentInput] = useState({})
   
   const ctx = useContext(UserContext);
-  console.log(ctx);
+ 
   
   const [allPost, SetAllPost] = useState([]);
  
@@ -40,9 +40,8 @@ const updatedData = data.map((post) => ({
 
     SetAllPost(updatedData)
 
-    console.log(data);
   }
-  console.log(allPost);
+
 
 
 
@@ -162,16 +161,16 @@ const updatedData = data.map((post) => ({
 
   return (
 
-    <div className='w-full h-screen flex mt-[-80px] pt-16 overflow-hidden'>
+    <div className='w-full h-screen flex mt-[-80px] md:mt-[-60px] pt-16 overflow-hidden'>
       
 
       {/* for a home page show posts and modal for upload a new posts */}
 
-      <div className='w-[75%] h-full overflow-y-auto scrollbar-hide'>
+      <div className='md:w-[75%] w-full h-full overflow-y-auto scrollbar-hide'>
 
          <PostButton getAllPosts={getAllPosts} />
 
-         <div className='w-full mt-4 mb-2 grid gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3'>
+         <div className='w-full mt-4 mb-2 grid gap-2 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3'>
           {
              allPost.map((ele, index) => {
                return <div  key={index}  className="w-[90%] h-[400px] mt-5 mx-auto bg-gradient-to-r from-slate-300 via-red-50 to-yellow-50 shadow-xl rounded-lg overflow-hidden border border-blue-300 hover:shadow-4xl transition-shadow flex flex-col duration-300 cursor-pointer">
@@ -353,7 +352,7 @@ const updatedData = data.map((post) => ({
 
 
       {/* this div for showing friends combo of following and folllowers */}
-      <div className='w-[25%] h-full overflow-y-auto scrollbar-hide'>
+      <div className='w-[25%] h-full hidden md:flex overflow-y-auto scrollbar-hide'>
           <div className='w-full h-full  flex justify-evenly'>
         
              <div className='flex flex-col gap-6'>
