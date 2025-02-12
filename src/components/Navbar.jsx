@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import UserContext from '../context/UserContext';
 import ProfileButton from './ProfileButton';
 import { FaLocationDot } from "react-icons/fa6";
 import { BsFillChatSquareHeartFill } from "react-icons/bs";
 import { IoNotificationsCircle } from "react-icons/io5";
+import { toast } from 'react-toastify';
 
 
 const Navbar = () => { 
@@ -77,7 +78,7 @@ const Navbar = () => {
 
 
 
-<aside id="logo-sidebar" className={`fixed top-0 left-0 z-40 w-52 h-screen/2  transition-transform ${
+<aside id="logo-sidebar" className={`fixed top-0 left-0 z-40 w-48 h-screen/2  transition-transform ${
           open ? "translate-x-0" : "-translate-x-full"
         } md:-translate-x-full`} aria-label="Sidebar">
 
@@ -89,7 +90,7 @@ const Navbar = () => {
     
 
     <ProfileButton /> 
-    <span className='font-semibold text-lg rounded-md  text-red-500'>
+    <span className='cursor-not-allowed underline font-serif text-lg '>
     {ctx?.user?.loggedUserDetails?.name}
     </span>
 
@@ -122,7 +123,6 @@ const Navbar = () => {
             <path d="m17.418 3.623-.018-.008a6.713 6.713 0 0 0-2.4-.569V2h1a1 1 0 1 0 0-2h-2a1 1 0 0 0-1 1v2H9.89A6.977 6.977 0 0 1 12 8v5h-2V8A5 5 0 1 0 0 8v6a1 1 0 0 0 1 1h8v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h6a1 1 0 0 0 1-1V8a5 5 0 0 0-2.582-4.377ZM6 12H4a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Z" />
           </svg>
           <span className="flex-1 ms-3 whitespace-nowrap">Notification</span>
-          <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full ">!</span>
         </Link>
       </li>
 
