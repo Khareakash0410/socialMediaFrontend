@@ -36,7 +36,7 @@ const SignUp = () => {
     // console.log(input);
 
 
-   let res = await fetch("https://socialmediabackend-abt5.onrender.com/users/create", {
+   let res = await fetch("https://socializerbackend.onrender.com/users/create", {
     method: "POST", 
     headers: {
      "Content-type": "application/json"

@@ -56,7 +56,7 @@ const removeUser = () => {
 const loginUserDetails = async () => {
     if (user.login) {
         try {
-            let res = await axios.get("https://socialmediabackend-abt5.onrender.com/users/getUserDetails", {
+            let res = await axios.get("https://socializerbackend.onrender.com/users/getUserDetails", {
                 headers: {
                     Authorization : user.token
                 }

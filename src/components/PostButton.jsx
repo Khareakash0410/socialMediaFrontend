@@ -36,7 +36,7 @@ const PostButton = (props) => {
 
 
 
-    let res = await axios.post("https://socialmediabackend-abt5.onrender.com/posts/create", details, {
+    let res = await axios.post("https://socializerbackend.onrender.com/posts/create", details, {
       headers: {
         "Authorization" : ctx.user.token
       }

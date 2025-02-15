@@ -30,7 +30,7 @@ const ForgetPassword = () => {
   const handleClick = async (e) => {
     e.preventDefault();
 
-    let res = await axios.post ("https://socialmediabackend-abt5.onrender.com/users/forgetPassword", input)
+    let res = await axios.post ("https://socializerbackend.onrender.com/users/forgetPassword", input)
 
 
     let data = await res.data;

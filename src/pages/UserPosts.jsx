@@ -18,7 +18,7 @@ const UserPosts = () => {
 
 
    const getYourAllPosts = async () => {
-    let res = await axios.get("https://socialmediabackend-abt5.onrender.com/posts/getYourAllPosts",{
+    let res = await axios.get("https://socializerbackend.onrender.com/posts/getYourAllPosts",{
         headers: {
             Authorization: token
         }

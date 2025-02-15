@@ -32,7 +32,7 @@ const Navbar = () => {
         const value = e.target.value;
         setInputValue(value); // Update input value state
      
-        let res = await fetch(`https://socialmediabackend-abt5.onrender.com/users/getUserBySearch?q=${value}`,{
+        let res = await fetch(`https://socializerbackend.onrender.com/users/getUserBySearch?q=${value}`,{
             method: "GET",
             headers: {
                   "Content-Type": "application/json"

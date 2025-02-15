@@ -27,7 +27,7 @@ const handleClick = async (e) => {
 
   // after , obj will automatically goes in req.body
 
-  let res = await axios.post("https://socialmediabackend-abt5.onrender.com/users/login", obj);
+  let res = await axios.post("https://socializerbackend.onrender.com/users/login", obj);
 
 
   let data = await res.data;

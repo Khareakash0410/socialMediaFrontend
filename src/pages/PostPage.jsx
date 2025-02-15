@@ -22,7 +22,7 @@ const PostPage = () => {
 
 
     const getPostById = async () => {
-      let res = await axios.get(`https://socialmediabackend-abt5.onrender.com/posts//getPostById/${postId}`);
+      let res = await axios.get(`https://socializerbackend.onrender.com/posts//getPostById/${postId}`);
       let data = await res.data;
       console.log(data);
       if (data.success) {
@@ -33,7 +33,7 @@ const PostPage = () => {
     const handleLikeDislikePost = async (ele) => {
       const postId = ele?._id;
       let token = ctx.user.token;
-      const res = await axios.put(`https://socialmediabackend-abt5.onrender.com/posts/likesPost/${postId}`,{}, {
+      const res = await axios.put(`https://socializerbackend.onrender.com/posts/likesPost/${postId}`,{}, {
         headers: {
           "Authorization": token
         }
@@ -57,7 +57,7 @@ const PostPage = () => {
       let obj = {
         text: commentRef.current.value
       }
-      let res = await axios.post(`https://socialmediabackend-abt5.onrender.com/posts/commentPost/${postId}`,obj,{
+      let res = await axios.post(`https://socializerbackend.onrender.com/posts/commentPost/${postId}`,obj,{
         headers: {
           "Authorization": ctx.user.token
         }
@@ -77,7 +77,7 @@ const PostPage = () => {
     }
 
     const handleDeleteComment =  async (commentId) => {
-      let res = await axios.delete(`https://socialmediabackend-abt5.onrender.com/posts/deleteComment/${commentId}/${postId}`);
+      let res = await axios.delete(`https://socializerbackend.onrender.com/posts/deleteComment/${commentId}/${postId}`);
 
       let data = await res.data;
       console.log(data); 

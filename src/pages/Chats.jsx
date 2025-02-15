@@ -18,7 +18,7 @@ const Chats = () => {
 
     const navigate = useNavigate();
 
-    let endPoint = 'https://socialmediabackend-abt5.onrender.com'
+    let endPoint = 'https://socializerbackend.onrender.com'
     let socketRef = useRef();
     const [messageBySocket, setMessageBySocket] = useState("");
 
@@ -57,7 +57,7 @@ const Chats = () => {
 
     const handleSelectedFriend = async (user) => {
         navigate(`?friendId=${user?._id}`, {replace : true}); 
-        let res  = await axios.get(`https://socialmediabackend-abt5.onrender.com/messages/getChats/${user?._id}`, {
+        let res  = await axios.get(`https://socializerbackend.onrender.com/messages/getChats/${user?._id}`, {
             headers: {
                 "Authorization": ctx.user.token
             }
@@ -83,7 +83,7 @@ const Chats = () => {
             text: message
          }  
 
-       let res = await axios.post(`https://socialmediabackend-abt5.onrender.com/messages/sendMessage/${friendId}`, obj, {
+       let res = await axios.post(`https://socializerbackend.onrender.com/messages/sendMessage/${friendId}`, obj, {
       headers : {
         "Authorization" : ctx?.user?.token
       }

@@ -46,7 +46,7 @@ const FriendProfilePage = () => {
    const [selectedPost, setSelectedPost] = useState({})
    
    const getUserById = async () => {
-    let res = await axios.get(`https://socialmediabackend-abt5.onrender.com/users/getUserById/${friendId}`);
+    let res = await axios.get(`https://socializerbackend.onrender.com/users/getUserById/${friendId}`);
 
     let data = await res.data.data;
     // console.log(data);
@@ -54,7 +54,7 @@ const FriendProfilePage = () => {
    }
 
    const getFriendAllPosts = async () => {
-    let res = await axios.get(`https://socialmediabackend-abt5.onrender.com/posts/getFriendAllPosts/${friendId}`);
+    let res = await axios.get(`https://socializerbackend.onrender.com/posts/getFriendAllPosts/${friendId}`);
 
     let data = await res.data.data;
 
@@ -68,7 +68,7 @@ const FriendProfilePage = () => {
    }
 
    const handleFollowFollowing = async () => {
-      let res = await axios.post(`https://socialmediabackend-abt5.onrender.com/users/followFollowings/${friendId}`,{}, {
+      let res = await axios.post(`https://socializerbackend.onrender.com/users/followFollowings/${friendId}`,{}, {
         headers: {
             "Authorization": token
         }
@@ -106,7 +106,7 @@ const FriendProfilePage = () => {
         text: comment[postId]
      }
 
-     let res = await axios.post(`https://socialmediabackend-abt5.onrender.com/posts/commentPost/${postId}`, obj, {
+     let res = await axios.post(`https://socializerbackend.onrender.com/posts/commentPost/${postId}`, obj, {
         headers: {
             "Authorization": token
         }
@@ -147,7 +147,7 @@ const FriendProfilePage = () => {
       let commentId = item._id;
       let postId = selectedPost._id;
 
-      let res = await axios.delete(`https://socialmediabackend-abt5.onrender.com/posts/deleteComment/${commentId}/${postId}`);
+      let res = await axios.delete(`https://socializerbackend.onrender.com/posts/deleteComment/${commentId}/${postId}`);
 
       let data = await res.data;
       console.log(data);
@@ -172,7 +172,7 @@ const FriendProfilePage = () => {
     let postId = ele._id;
     let token = ctx.user.token
 
-    let res = await axios.put(`https://socialmediabackend-abt5.onrender.com/posts/likesPost/${postId}`, {}, {
+    let res = await axios.put(`https://socializerbackend.onrender.com/posts/likesPost/${postId}`, {}, {
         headers: {
             "Authorization" : token
         }

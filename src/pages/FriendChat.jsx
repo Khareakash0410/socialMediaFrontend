@@ -10,7 +10,7 @@ import moment from 'moment';
 
 const FriendChat = () => {
 
-    let endPoint = 'https://socialmediabackend-abt5.onrender.com'
+    let endPoint = 'https://socializerbackend.onrender.com'
 
     const [conversation, setConversation] = useState([]);
 
@@ -34,7 +34,7 @@ const FriendChat = () => {
     console.log(friend);
 
     const getChats = async () => {
-        let res  = await axios.get(`https://socialmediabackend-abt5.onrender.com/messages/getChats/${friendId}`, {
+        let res  = await axios.get(`https://socializerbackend.onrender.com/messages/getChats/${friendId}`, {
             headers: {
                 "Authorization": token
             }
@@ -58,7 +58,7 @@ const FriendChat = () => {
         }
         // console.log(obj);
 
-        let res = await axios.post(`https://socialmediabackend-abt5.onrender.com/messages/sendMessage/${friendId}`, obj, {
+        let res = await axios.post(`https://socializerbackend.onrender.com/messages/sendMessage/${friendId}`, obj, {
             headers: {
                 "Authorization": token
             }
